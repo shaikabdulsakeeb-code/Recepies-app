@@ -1,22 +1,38 @@
 import React from 'react'
 
-function Rcard({ recepie }) {
-  return (
-    <div className='card' style={{
-        width:"10em",
-        border:"1px solid black",
-        padding:"1em",
-        display:"flex",
-        flexDirection:"column",
-        alignItems:"center",
-        gap:"1em"
+function Rcard({recepie,onClick}) {
 
-    }}>
-      <h2>{recepie.name}</h2>
-      <img style={{
-        width:"100%"
-      }} src={recepie.image} alt="" />
+  return (
+
+    <div
+      className="card h-100 shadow"
+      style={{cursor:"pointer"}}
+      onClick={onClick}
+    >
+
+      <img
+        src={recepie.image}
+        className="card-img-top"
+      />
+
+      <div className="card-body">
+
+        <h5 className="card-title">
+          {recepie.name}
+        </h5>
+
+        <p>
+          ⭐ {recepie.rating}
+        </p>
+
+        <p>
+          {recepie.cuisine}
+        </p>
+
+      </div>
+
     </div>
+
   )
 }
 
